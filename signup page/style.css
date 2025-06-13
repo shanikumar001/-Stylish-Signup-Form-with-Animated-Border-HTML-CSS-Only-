@@ -1,0 +1,96 @@
+  body {
+      background: linear-gradient(to right, #011121, #365666);
+      color: #00ff00;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+    form {
+      background: linear-gradient(to bottom, #0b0c10, #1f2833);
+      padding: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+      border-radius: 10px;
+      width: 450px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+    form h2{
+        gap: 0;
+    }
+    input {
+      padding: 10px;
+      height: 30px;
+      border-radius: 5px;
+      border: none;
+      background-color: #333;
+      color: white;
+      font-size: 16px;
+      text-align: center;
+    }
+    input:hover {
+      background-color: #77a577;
+      color: black;
+    }
+    button {
+      background-color: #00ff00;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      height: 40px;
+      width: 200px;
+      margin: 10px;
+      margin-left: 25%;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #639263;
+      transition: 0.3s;
+    }
+    #message {
+      margin-top: 15px;
+      font-weight: bold;
+      min-height: 20px;
+      text-align: center;
+    }
+
+    .containers {
+        height: 375px;
+        position: relative;
+    }
+
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.containers::after, .containers::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 80%,#44ff00,#1100ff,#ff0000);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10px;
+    border-radius: 10px;
+    animation: spin 8s linear infinite;
+}
+@keyframes spin{
+    from{
+       --angle: 0deg;
+    }
+    to{
+       --angle: 360deg;
+    }
+}
